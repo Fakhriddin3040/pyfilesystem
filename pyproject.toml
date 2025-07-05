@@ -1,0 +1,18 @@
+[project]
+name = "pycompy"
+version = "0.0.1"
+description = "Python project compiler"
+authors = [
+    {name = "Fakhriddin",email = "fahriddin3040@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "setuptools (>=80.9.0,<81.0.0)",
+    "cython (>=3.1.2,<4.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
