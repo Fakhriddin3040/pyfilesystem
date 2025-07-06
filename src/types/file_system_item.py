@@ -60,3 +60,6 @@ class FileSystemItem:
         self.path, self.name = os.path.split(new_path)
 
         return new_path
+
+    def __str__(self):
+        return f"FileSystemItem<self.typ={self.typ}, path={self.path}, name={self.name}>"
