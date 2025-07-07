@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 
-from typing import TypeAlias, Union, Callable, TYPE_CHECKING, Optional, List, Any
+from typing import TypeAlias, Union, Callable, TYPE_CHECKING, Optional, List
 
 
 
@@ -13,10 +13,12 @@ if TYPE_CHECKING:
 
 FSItemT: TypeAlias = Union["FileSystemFile", "FileSystemDirectory"]
 
+FindCheckCallback = Callable[[FSItemT], bool]
+
 FindExecCallback: TypeAlias = Callable[
     [
-        FSItemT,
+        Optional[Union[List["FSItemT"], "FSItemT"]],
         Optional[Union[List["FindParsedSource"], "FindParsedSource"]],
     ],
-    Any
+    bool
 ]

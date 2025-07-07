@@ -66,10 +66,16 @@ class FileSystemDirectory(FileSystemItem):
         self.load_content(path=path)
 
     def list_content(self) -> List["FSItemT"]:
+        """
+        Returns a list of all files and directories.
+        Directories go first
+        :return:
+        """
         if not self._content_loader:
             self.load_content()
 
-        return list(chain(self.files, self.directories)) # noqa
+        result = list(chain(self.directories, self.files)) # noqa
+        return result
 
     def __str__(self):
         return (
